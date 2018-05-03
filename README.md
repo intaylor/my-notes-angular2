@@ -1,5 +1,8 @@
 # BoeingTest
 
+Please note the back end server response is mocked with in memory api from angular 2 and there is another standalone back end 
+services implemented using Java at a different repository.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Development server
