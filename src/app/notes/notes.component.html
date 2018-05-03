@@ -1,0 +1,41 @@
+<h2>My Notes</h2>
+
+<div>
+  <form>
+  <fieldset>
+    <label>Title:</label>
+    <textarea id="title" maxlength="225" required [(ngModel)]="note.title" name="title" #title="ngModel"></textarea>
+    <div *ngIf="title.errors && (title.dirty || title.touched)" class="alert alert-danger">
+      <div [hidden]="!title.errors.required">
+        Title is required!
+      </div>
+      <div [hidden]="!title.errors.maxlength">
+        Title cannot be more than 225 characters long.
+      </div>
+    </div>
+
+    <label>Content:</label>
+    <textarea id="content" maxlength="1024" required [(ngModel)]="note.content" name="content" #content="ngModel"></textarea>
+    <div *ngIf="content.errors && (content.dirty || content.touched)" class="alert alert-danger">
+      <div [hidden]="!content.errors.required">
+         Content is required!
+      </div>
+      <div [hidden]="!content.errors.maxlength">
+        Content cannot be more than 1024 characters long.
+      </div>
+    </div>
+
+    <button (click)="add(title.value, content.value); title.value=''; content.value=''">
+      Add New Note
+    </button>
+  </fieldset>
+  </form>
+</div>
+<hr>
+<ul class="notes">
+  <li *ngFor="let note of notes">
+      <div class="detail">{{note.title}}</div>
+      <div>{{note.content}}</div>
+      <br>
+  </li>
+</ul>
