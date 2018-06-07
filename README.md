@@ -1,4 +1,4 @@
-# BoeingTest
+# MyNotes App
 
 Please note the back end server response is mocked with in memory api from angular 2 and there is another standalone back end 
 services implemented using Java at a different repository.
